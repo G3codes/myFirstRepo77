@@ -1,0 +1,34 @@
+Mappings:
+  RegionSelect:
+    us-west-2:
+      Linux: "ami-04e914639d0cca79a"
+      Ubuntu: "ami-03f65b8614a860c29"
+    us-east-1:
+      Linux: "ami-0889a44b331db0194" 
+      Ubuntu: "ami-053b0d53c279acc90"
+
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !FindInMap [RegionSelect, !Ref "AWS::Region", !Ref AmiFamily]
+      InstanceType: "t2.micro"
+      Tags: 
+        - Key: "name"
+          Value: "Guillaume"
+        - Key: "name"
+          Value: "MyEc2instance"
+
+
+Parameters:
+  AmiFamily:
+    Description: The Ami Family
+    Type: String
+    Default: Linux
+    AllowedValues:
+      - Linux
+      - Ubuntu
+    ConstraintDescription: 'must be Linux or Ubuntu'
+
+
+            
