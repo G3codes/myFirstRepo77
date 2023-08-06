@@ -10,7 +10,7 @@ RUN yum install -y httpd
 # execute httpd
 
 #copy html file from our local to inside the container
-COPY website-from-s3-github /var/www/html/index.html
+COPY website-from-s3-github /var/www/html/
 
 #open port 80
 EXPOSE 80
@@ -20,7 +20,8 @@ ENTRYPOINT [ "/usr/sbin/httpd" ]
 #can override CMD in the background -D forces the container to remain active after we exit the container. 
 CMD [ "-D", "FOREGROUND" ]
 
-#Entrypoint and CMD enable the specified commands to run automically when the container is deployed 
+#Entrypoint and CMD enable the specified commands to run automically when the container starts. 
+#Entrypoint commands can't be overrided while CMD can be override outside the container. 
 
 
 
