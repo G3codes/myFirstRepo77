@@ -14,7 +14,7 @@ Resources:
           yum install -y httpd
           systemctl start httpd
           systemctl enable httpd
-          echo "Ec2 launch by Guillaume through CloudFormation with exported SampleNetworkCrossStack" > var/www/html/index.html
+          echo "Ec2 launched by Guillaume in ${AWS::Region}" > /var/www/html/index.html
 
 
 Parameters:
