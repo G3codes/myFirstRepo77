@@ -10,7 +10,7 @@ RUN yum install -y httpd
 # execute httpd
 
 #copy html file from our local to inside the container
-COPY website-from-s3-github /var/www/html/
+COPY index.html /var/www/html/
 
 #open port 80
 EXPOSE 80
