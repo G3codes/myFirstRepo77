@@ -1,4 +1,4 @@
-# Create an ec2 instance that uses exported Values from SampleNetwork.yml
+# Template to create an ec2 instance that uses exported Values from SampleNetwork.yml
 Mappings:
   RegionSelect:
     us-west-2:
