@@ -1,8 +1,8 @@
 ---
     AWSTemplateFormatVersion: '2010-09-09'
     Description: >-
-      This DevOps Hackathon template will create ELB Security Group, ELB, ELB Listener, 
-      Target Group, Launch Configuration and Autoscaling group. NB: there is no DB associated to the template.
+      This will create ELB Security Group, ELB, ELB Listener, 
+      Target Group, Launch Configuration and Autoscaling group. To reduce cost There is no DB associated to the template.
    
     Parameters:
       CustomVPC:
